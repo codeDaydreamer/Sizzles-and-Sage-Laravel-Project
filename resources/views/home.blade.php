@@ -4,7 +4,7 @@
 <section class="hero" style="background-image: url('{{ asset('images/hero.jpeg') }}');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Sizzles & Sage</h1>
+        <h1><span class="logo-design">S</span>izzles & Sag<span class="logo-design">e</span></h1>
         <p>Create Unforgettable Moments at Sizzle & Sage – The Perfect Setting for Romantic Dinners and Special
             Celebrations. Taste the Magic of Every Meal.</p>
         <a href="{{ route('menu') }}" class="button">Explore Menu</a>

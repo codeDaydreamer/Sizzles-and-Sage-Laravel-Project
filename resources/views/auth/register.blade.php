@@ -23,8 +23,8 @@
         .logo {
             display: block;
             margin: 0 auto; /* Center the logo horizontally */
-            width: 200px;
-            height: 200px;
+            width: auto;
+            height: 100px;
             margin-bottom: 3px;
         }
 
@@ -84,7 +84,7 @@
         }
     </style>
      <div class="header">
-                <img src="{{ asset('images/favicon.png') }}" alt="Sizzles and Sage Logo" class="logo">
+                <img src="{{ asset('images/sizzles.png') }}" alt="Sizzles and Sage Logo" class="logo">
                 <h2 class="welcome-text">Karibu Sizzles and Sage !!</h2>
             </div>
 

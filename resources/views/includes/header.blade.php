@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <a href="{{ route('home') }}" class="logo brand" style="color: white; font-size:2em">Sizzles</a>
+                <a href="{{ route('home') }}" class="logo brand" style="color: white; font-size:2em">Siz<span class="logo-design">zle</span>s</a>
             </div>
             <ul class="navbar-menu">
                 <li><a href="{{ route('home') }}">Home</a></li>

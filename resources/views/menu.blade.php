@@ -16,10 +16,10 @@
 
         <!-- Menu Categories -->
         <div class="menu-categories">
-            <a href="#appetizers" class="menu-category">Appetizers</a>
-            <a href="#main-courses" class="menu-category">Main Courses</a>
-            <a href="#desserts" class="menu-category">Desserts</a>
-            <a href="#drinks" class="menu-category">Drinks</a>
+            <a href="#appetizers" class="menu-category button">Appetizers</a>
+            <a href="#main-courses" class="menu-category button">Main Courses</a>
+            <a href="#desserts" class="menu-category button">Desserts</a>
+            <a href="#drinks" class="menu-category button">Drinks</a>
         </div>
 
         <!-- Appetizers Section -->
@@ -31,7 +31,7 @@
                     <img src="{{ asset($appetizer->image) }}" alt="{{ $appetizer->name }}">
                     <div class="menu-item-details">
                         <p class="menu-item-name">{{ $appetizer->name }}</p>
-                        <p class="menu-item-price">${{ $appetizer->price }}</p>
+                        <p class="menu-item-price">ksh {{ $appetizer->price }}</p>
                         <form action="{{ route('placeOrder') }}" method="POST">
                             @csrf
                             <input type="hidden" name="item_name" value="{{ $appetizer->name }}">
@@ -53,7 +53,7 @@
                     <img src="{{ asset($mainCourse->image) }}" alt="{{ $mainCourse->name }}">
                     <div class="menu-item-details">
                         <p class="menu-item-name">{{ $mainCourse->name }}</p>
-                        <p class="menu-item-price">${{ $mainCourse->price }}</p>
+                        <p class="menu-item-price">ksh {{ $mainCourse->price }}</p>
                         <form action="{{ route('placeOrder') }}" method="POST">
                             @csrf
                             <input type="hidden" name="item_name" value="{{ $mainCourse->name }}">
@@ -75,7 +75,7 @@
                     <img src="{{ asset($dessert->image) }}" alt="{{ $dessert->name }}">
                     <div class="menu-item-details">
                         <p class="menu-item-name">{{ $dessert->name }}</p>
-                        <p class="menu-item-price">${{ $dessert->price }}</p>
+                        <p class="menu-item-price">ksh {{ $dessert->price }}</p>
                         <form action="{{ route('placeOrder') }}" method="POST">
                             @csrf
                             <input type="hidden" name="item_name" value="{{ $dessert->name }}">
@@ -97,7 +97,7 @@
                     <img src="{{ asset($drink->image) }}" alt="{{ $drink->name }}">
                     <div class="menu-item-details">
                         <p class="menu-item-name">{{ $drink->name }}</p>
-                        <p class="menu-item-price">${{ $drink->price }}</p>
+                        <p class="menu-item-price">ksh {{ $drink->price }}</p>
                         <form action="{{ route('placeOrder') }}" method="POST">
                             @csrf
                             <input type="hidden" name="item_name" value="{{ $drink->name }}">

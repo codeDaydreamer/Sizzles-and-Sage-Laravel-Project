@@ -1,4 +1,11 @@
 
+@font-face {
+    font-family: 'Oleo Script Swash Caps';
+    src: url('/fonts/OleoScriptSwashCaps-Bold.ttf') format('ttf'),
+         url('/fonts/OleoScriptSwashCaps-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* Colors */
@@ -26,6 +33,15 @@ h2{
     margin: 30px;
     font-size: 2em;
     font-weight: 200;
+}
+.menu-section-heading{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-align: center;
+    margin: 30px;
+    font-size: 2em;
+    font-weight: 100;
+    padding-top: 30px;
+    text-decoration: underline;
 }
 p{
     font-family: 'Playfair Display', cursive;
@@ -110,7 +126,9 @@ header{
 .navbar-user li a:hover {
     color: #B06F1F; /* Lighter brown for hover effect */
 }
-
+.logo-design{
+    color: var(--primary-color);
+}
 /* Dropdown Styles */
 .dropdown {
     position: relative;
@@ -120,6 +138,7 @@ header{
     display: flex;
     align-items: center;
     cursor: pointer;
+    
 }
 
 .dropdown-toggle i {
@@ -143,7 +162,7 @@ header{
 
 .dropdown-item {
     padding: 10px 20px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
@@ -300,6 +319,8 @@ header{
 
 .button:hover {
     background-color: #8E4C10; /* Darker shade for hover */
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 /* Hero Section */
@@ -372,6 +393,13 @@ header{
     justify-content: center;
     align-items: center;
 }
+.aboutus-hero h1 {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 5em;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 .hero-overlay {
     position: absolute;
@@ -411,9 +439,10 @@ header{
 
 .about-text h2 {
     font-family: 'Oleo Script Swash Caps', cursive;
-    font-size: 2.5em; /* Larger heading size */
-    color: #B06F1F; /* Primary color */
-    margin-bottom: 20px; /* Spacing below heading */
+    font-size: 7em;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.2;
 }
 
 .about-images {
@@ -699,8 +728,8 @@ header{
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 110vh;
-    margin-bottom: 50px;
+    height: auto;
+
 }
 
 
