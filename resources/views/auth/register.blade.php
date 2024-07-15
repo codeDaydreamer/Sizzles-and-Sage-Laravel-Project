@@ -1,52 +1,135 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+        .register-container {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center align the content */
+        }
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+        .register-form {
+            text-align: left; /* Reset text alignment for form elements */
+            color: #fff;
+        }
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        .header {
+            margin-bottom: 20px;
+        }
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        .logo {
+            display: block;
+            margin: 0 auto; /* Center the logo horizontally */
+            width: 200px;
+            height: 200px;
+            margin-bottom: 3px;
+        }
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+        .welcome-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: whitesmoke;
+            font-family: 'Oleo Script Swash Caps', cursive;
+        font-weight: 100;
+        text-align: center;
+        }
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #444;
+            color: #fff;
+            border: 1px solid #666;
+            border-radius: 4px;
+        }
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+        .primary-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+        .primary-button:hover {
+            background-color: #45a049;
+        }
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+        .primary-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+        }
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-gray-600 {
+            color: #ccc;
+        }
+
+        .hover:text-gray-900:hover {
+            color: #fff;
+        }
+    </style>
+     <div class="header">
+                <img src="{{ asset('images/favicon.png') }}" alt="Sizzles and Sage Logo" class="logo">
+                <h2 class="welcome-text">Karibu Sizzles and Sage !!</h2>
+            </div>
+
+    <div class="register-container">
+
+        <form method="POST" action="{{ route('register') }}" class="register-form">
+            @csrf
+
+
+            <!-- Name -->
+            <div class="form-group">
+                <x-input-label for="name" :value="__('Name')" />
+                <x-text-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <x-input-label for="email" :value="__('Email')" />
+                <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <x-input-label for="password" :value="__('Password')" />
+                <x-text-input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" />
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-text-input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
+
+            <div class="form-group mt-4">
+                <a href="{{ route('login') }}" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                    {{ __('Already registered?') }}
+                </a>
+                <x-primary-button class="ms-4">
+                    {{ __('Register') }}
+                </x-primary-button>
+            </div>
+        </form>
+    </div>
 </x-guest-layout>
