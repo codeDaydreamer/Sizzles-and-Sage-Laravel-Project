@@ -118,7 +118,7 @@
         if (alert) {
             setTimeout(function () {
                 alert.remove();
-            }, 3000); // Dismiss after  seconds
+            }, 2000); // Dismiss after 2  seconds
         }
     });
 </script>

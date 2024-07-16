@@ -138,7 +138,7 @@ header{
     display: flex;
     align-items: center;
     cursor: pointer;
-    
+
 }
 
 .dropdown-toggle i {
@@ -891,39 +891,41 @@ profiles page
 .userprofile .container {
     margin-top: 20px;
 }
-
-.userprofile .card-header {
-    background-color: #f0f0f0;
-    padding: 10px;
-    font-weight: bold;
-}
-
-.userprofile .card-body {
-    padding: 20px;
-}
-
-.userprofile .user-info {
-    margin-bottom: 20px;
-}
-
-.userprofile .orders {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.userprofile .order-item {
-    flex: 0 0 calc(33.33% - 20px); /* Three items per row with margin */
-    margin-right: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
-
-.userprofile .total-amount {
+.user-profile-container {
     margin-top: 20px;
 }
 
+.user-profile-card {
+    margin-bottom: 20px;
+}
 
+.user-profile-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
 
+.user-profile-info,
+.user-profile-orders,
+.user-profile-total-amount {
+    margin-bottom: 20px;
+}
 
+.user-profile-order-item {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-profile-orders-header {
+    margin-bottom: 10px;
+}
+
+.user-profile-total-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.user-profile-checkout-button {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

@@ -130,6 +130,7 @@
                     {{ __('Register') }}
                 </x-primary-button>
             </div>
+            
         </form>
     </div>
 </x-guest-layout>

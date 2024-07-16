@@ -94,11 +94,11 @@ class MenuItemSeeder extends Seeder
                 'image' => 'images/dessert3.jpg',
             ],
             [
-                'name' => 'Fruit Sorbet',
-                'description' => 'Refreshing fruit sorbet made with fresh seasonal fruits.',
-                'price' => 600,
+                'name' => 'Mandazi',
+                'description' => 'The KDF mandazi is a fun way of redefining the traditional mandazi.',
+                'price' => 5,
                 'category' => 'Desserts',
-                'image' => 'images/dessert4.jpg',
+                'image' => 'images/mandazi.png',
             ],
             [
                 'name' => 'Mojito',

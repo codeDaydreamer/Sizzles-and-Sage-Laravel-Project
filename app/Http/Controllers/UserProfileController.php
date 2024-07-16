@@ -1,22 +1,21 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Models\User; // Adjust User model path if different
-use App\Models\Order; // Assuming you have an Order model
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
 {
     public function show()
     {
-        $user = auth()->user(); // Fetch authenticated user
-
-        // Load user's orders with total amount
+        $user = Auth::user();
         $orders = Order::where('user_id', $user->id)->get();
-        $totalAmount = $orders->sum('total_amount'); // Assuming 'total_amount' is a column in your orders table
 
-        return view('userprofile', compact('user', 'orders', 'totalAmount'));
+        // Calculate the total amount
+        $totalAmount = $orders->sum('item_price');
+
+        return view('user.profile', compact('user', 'orders', 'totalAmount'));
     }
 }

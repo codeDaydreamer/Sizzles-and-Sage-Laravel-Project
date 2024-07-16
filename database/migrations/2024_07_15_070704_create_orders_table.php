@@ -12,7 +12,15 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('item_name');
             $table->decimal('item_price', 8, 2);
+            $table->unsignedBigInteger('user_id'); // Existing column
+            $table->string('checkout_request_id')->nullable();
+            $table->string('mpesa_receipt_number')->nullable();
+            $table->dateTime('transaction_date')->nullable();
+            $table->enum('status', ['pending', 'paid', 'failed'])->default('pending');
             $table->timestamps();
+
+            // Foreign key constraint
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -21,3 +29,4 @@ class CreateOrdersTable extends Migration
         Schema::dropIfExists('orders');
     }
 }
+

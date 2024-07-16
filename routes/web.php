@@ -7,16 +7,17 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\PaymentController;
 
 // Public routes
 Route::get('/', function () {
     return view('auth.register'); // Direct users to register page
-})->name('register');
+})->name('register-web'); // Updated route name to avoid conflict
+
 Route::get('/login', function () {
     return view('auth.login'); // Direct users to login page first
 })->name('login');
-
-
 
 // Protected routes (require authentication)
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -51,6 +52,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // User profile page
     Route::get('/userprofile', 'App\Http\Controllers\UserProfileController@show')->name('userprofile');
+    Route::get('/user/profile', [UserProfileController::class, 'show'])->name('user.profile');
+
+    // Payment routes
+    Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout');
+    Route::post('/payment/callback', [PaymentController::class, 'mpesaCallback'])->name('mpesa.callback');
 });
 
 // Authentication routes (Breeze default)
