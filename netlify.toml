@@ -1,0 +1,7 @@
+[build]
+  publish = "public"
+  command = "composer install && php artisan migrate --force"
+
+[context.production.environment]
+  PHP_VERSION = "8.2"
+
