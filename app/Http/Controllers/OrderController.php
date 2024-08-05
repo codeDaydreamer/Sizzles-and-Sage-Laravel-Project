@@ -44,5 +44,18 @@ class OrderController extends Controller
             // Return an error response or redirect with error message
             return back()->with('error', 'Failed to place order. Please try again.');
         }
+
     }
+    public function destroy($id)
+    {
+        try {
+            $order = Order::findOrFail($id);
+            $order->delete();
+            return response()->json(['message' => 'Order deleted successfully']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Failed to delete order'], 500);
+        }
+    }
+
+
 }

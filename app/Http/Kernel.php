@@ -9,10 +9,10 @@ class Kernel extends HttpKernel
     // Other middleware entries...
 
     protected $routeMiddleware = [
-        // Other middleware entries...
-
-        'guest' => \App\Http\Middleware\RedirectIfGuest::class,
+        // Other middleware
+        'redirect.if.authenticated' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     ];
+
 
     // Other methods...
 }
