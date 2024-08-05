@@ -41,6 +41,16 @@
                         <button class="user-profile-checkout-button" onclick="checkout()">Checkout</button>
                     </div>
                 </div>
+
+                <!-- Logout Button -->
+                <div class="card-body text-center">
+                    <a class="btn btn-logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -130,7 +140,21 @@
 
     .btn-delete i {
         font-size: 1.25rem;
-        /* Adjust icon size as needed */
+    }
+
+    .btn-logout {
+        background-color: #ff4d4d; /* Adjust as needed */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.25rem;
+        transition: 0.3s ease-in-out;
+    }
+
+    .btn-logout:hover {
+        background-color: #e60000; /* Adjust as needed */
     }
 
     button {
@@ -168,7 +192,6 @@
                 });
         }
     }
-
 
     function checkout() {
         const phoneNumber = prompt("Enter your phone number:");

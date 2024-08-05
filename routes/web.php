@@ -26,21 +26,19 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/menu', [PageController::class, 'menu'])->name('menu');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/book', [PageController::class, 'book'])->name('book');
+Route::get('test-logging', function () {
+    \Log::info('Test logging route accessed.');
+    return 'Logging test completed.';
+});
 
-// Authentication routes (Breeze default)
+// Authentication routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('/login', [AuthenticatedSessionController::class, 'store']);
-    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-
-    Route::post('/submit-contact', [ContactController::class, 'submit'])->name('submitContact');
-
     Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('/register', [RegisteredUserController::class, 'store']);
-
     Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
     Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
-
     Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
     Route::post('/reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
@@ -75,3 +73,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout');
     Route::post('/payment/callback', [PaymentController::class, 'mpesaCallback'])->name('mpesa.callback');
 });
+
+// Logout route
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+     ->name('logout')
+     ->middleware('auth'); // Ensure only authenticated users can log out

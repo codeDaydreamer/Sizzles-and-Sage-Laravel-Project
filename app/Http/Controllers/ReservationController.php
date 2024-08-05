@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Reservation; // Adjusted model import
@@ -22,7 +21,7 @@ class ReservationController extends Controller
         // Save reservation to the database
         Reservation::create($validated);
 
-        // Return the reservation view with success message
-        return view('book')->with('success', 'Reservation submitted successfully!');
+        // Redirect back to the reservation page with success message
+        return redirect()->route('book')->with('success', 'Reservation submitted successfully!');
     }
 }
