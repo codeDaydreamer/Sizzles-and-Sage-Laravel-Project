@@ -58,11 +58,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Reservation submission (private)
     Route::post('/submit-reservation', [ReservationController::class, 'submit'])->name('submitReservation');
 
+
     // Menu order submission
     Route::post('/place-order', [MenuController::class, 'placeOrder'])->name('placeOrder');
 
     // Newsletter subscription
     Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
+
+
+    Route::post('/contact', [ContactController::class, 'store'])->name('submitContact');
+
+
 
     // User profile page
     Route::get('/userprofile', [UserProfileController::class, 'show'])->name('userprofile');
@@ -76,5 +82,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Logout route
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-     ->name('logout')
-     ->middleware('auth'); // Ensure only authenticated users can log out
+    ->name('logout')
+    ->middleware('auth'); // Ensure only authenticated users can log out

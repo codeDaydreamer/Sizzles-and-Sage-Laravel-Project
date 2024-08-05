@@ -832,58 +832,6 @@ textarea {
 .contact-column p {
     font-size: 1.2rem;
 }
-/* Notification Card Styles */
-.notification-card {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it's above other content */
-    animation: fadeOut 3s ease-in-out; /* Animation for fading out */
-}
-
-/* Keyframes for fading out animation */
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Apply your existing styles to the notification content */
-.notification-content {
-    text-align: center;
-    color: var(--color-primary); /* Primary color */
-    font-family: 'Roboto', sans-serif; /* Body font */
-}
-
-.notification-content p {
-    margin-bottom: 10px;
-}
-
-.notification-content .button {
-    background-color: var(--color-primary);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.notification-content .button:hover {
-    background-color: #8E4C10; /* Darker shade for hover */
-}
-/*
-profiles page
-*/
 
 
 /* userprofile.css */

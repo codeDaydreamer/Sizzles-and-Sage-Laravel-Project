@@ -1,6 +1,6 @@
 <x-guest-layout>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
         .register-container {
             width: 100%;
             margin: auto;
@@ -34,8 +34,8 @@
             margin-bottom: 10px;
             color: whitesmoke;
             font-family: 'Oleo Script Swash Caps', cursive;
-        font-weight: 100;
-        text-align: center;
+            font-weight: 100;
+            text-align: center;
         }
 
         .form-group {
@@ -83,16 +83,16 @@
             color: #fff;
         }
     </style>
-     <div class="header">
-                <img src="{{ asset('images/sizzles.png') }}" alt="Sizzles and Sage Logo" class="logo">
-                <h2 class="welcome-text">Karibu Sizzles and Sage !!</h2>
-            </div>
+
+    <div class="header">
+        <img src="{{ asset('images/sizzles.png') }}" alt="Sizzles and Sage Logo" class="logo">
+        <h2 class="welcome-text">Karibu Sizzles and Sage !!</h2>
+    </div>
 
     <div class="register-container">
 
         <form method="POST" action="{{ route('register') }}" class="register-form">
             @csrf
-
 
             <!-- Name -->
             <div class="form-group">
@@ -106,6 +106,13 @@
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <x-input-label for="phone" :value="__('Phone Number')" />
+                <x-text-input id="phone" class="form-control" type="text" name="phone" :value="old('phone')" required />
+                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
             </div>
 
             <!-- Password -->
@@ -123,14 +130,14 @@
             </div>
 
             <div class="form-group mt-4">
-                <a href="{{ route('login') }}" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                <a href="{{ route('login') }}" class="text-sm text-gray-600 hover:text-gray-900">
                     {{ __('Already registered?') }}
                 </a>
                 <x-primary-button class="ms-4">
                     {{ __('Register') }}
                 </x-primary-button>
             </div>
-            
+
         </form>
     </div>
 </x-guest-layout>

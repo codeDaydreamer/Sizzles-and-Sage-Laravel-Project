@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Reservation; // Adjusted model import
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -15,7 +15,7 @@ class ReservationController extends Controller
             'phone' => 'required|string|max:20',
             'date' => 'required|date',
             'time' => 'required',
-            'people' => 'required|integer|min:1', // Correct validation for number of people
+            'people' => 'required|integer|min:1',
         ]);
 
         // Save reservation to the database
