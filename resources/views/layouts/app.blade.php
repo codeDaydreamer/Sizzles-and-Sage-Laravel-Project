@@ -40,6 +40,18 @@
                 }, 5000); // Dismiss after 5 seconds
             }
         });
+        document.getElementById('hamburger-icon').addEventListener('click', function() {
+    const sidebar = document.getElementById('mobile-sidebar');
+    sidebar.classList.toggle('sidebar-active');
+});
+
+const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('mobile-sidebar').classList.remove('sidebar-active');
+    });
+});
+
     </script>
 </body>
 </html>

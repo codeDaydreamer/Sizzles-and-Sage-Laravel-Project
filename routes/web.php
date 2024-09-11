@@ -67,6 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
     Route::post('/contact', [ContactController::class, 'store'])->name('submitContact');
+    Route::post('/contact', [ContactController::class, 'store'])->name('submitContact');
 
 
 

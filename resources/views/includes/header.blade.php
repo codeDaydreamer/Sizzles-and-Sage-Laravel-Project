@@ -4,6 +4,11 @@
             <div class="navbar-brand">
                 <a href="{{ route('home') }}" class="logo brand" style="color: white; font-size:2em">Siz<span class="logo-design">zle</span>s</a>
             </div>
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger-menu">
+                <i class='bx bx-menu' id="hamburger-icon"></i>
+            </div>
+            <!-- Full menu for desktop -->
             <ul class="navbar-menu">
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About Us</a></li>
@@ -34,4 +39,21 @@
             </ul>
         </div>
     </nav>
+    <!-- Sidebar for mobile -->
+    <div id="mobile-sidebar" class="sidebar">
+        <ul>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('about') }}">About Us</a></li>
+            <li><a href="{{ route('menu') }}">Menu</a></li>
+            <li><a href="{{ route('book') }}">Book a Table</a></li>
+            <li><a href="{{ route('contact') }}">Contact Us</a></li>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+                <li><a href="{{ route('userprofile') }}">My Profile</a></li>
+                <li><a href="{{ route('logout') }}">Logout</a></li>
+            @endguest
+        </ul>
+    </div>
 </header>

@@ -1,15 +1,19 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-
 class ContactController extends Controller
 {
     public function store(Request $request)
     {
+        // Log incoming request headers and data for debugging
+        \Log::info('Request Headers:', $request->headers->all());
+        \Log::info('Request Data:', $request->all());
+
         // Define validation rules
         $rules = [
             'name' => 'required|string|max:255',

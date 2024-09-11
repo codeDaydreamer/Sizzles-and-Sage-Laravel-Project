@@ -720,8 +720,7 @@ header{
 .reservation-button:hover {
     background-color: #944d15;
 }
-
-/*contact us */
+/* Footer Section: Contact Us Page */
 .contact-us-page {
     padding: 50px 0;
     text-align: center;
@@ -729,22 +728,26 @@ header{
     background-size: cover;
     background-position: center;
     height: auto;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 
 .contact-us-background {
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Adjust as needed */
+    min-height: 100vh; /* Ensure the background stretches */
 }
 
 .contact-us-content {
     position: relative;
-    z-index: 2; /* Ensure content is above background */
+    z-index: 2;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-us-content h2 {
@@ -761,11 +764,11 @@ header{
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-   backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent form background */
 }
 
 .form-group {
@@ -777,6 +780,7 @@ header{
     font-weight: bold;
     margin-bottom: 5px;
     text-align: left;
+    color: whitesmoke; /* Ensure label text is visible */
 }
 
 input[type="text"],
@@ -812,15 +816,17 @@ textarea {
 
 .contact-details {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     margin-top: 50px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .contact-column {
     flex: 1;
-    text-align: left;
     padding: 0 20px;
+    max-width: 300px; /* Prevent the columns from becoming too wide */
+    margin-bottom: 30px;
 }
 
 .contact-column h3 {
@@ -831,6 +837,19 @@ textarea {
 
 .contact-column p {
     font-size: 1.2rem;
+}
+
+/* Media Queries for Footer */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center; /* Center columns on mobile */
+    }
+
+    .contact-column {
+        max-width: 100%; /* Make the columns full-width on mobile */
+        text-align: center;
+    }
 }
 
 
@@ -876,4 +895,217 @@ textarea {
 .user-profile-checkout-button {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Media Queries */
+/* Mobile (default styles) */
+@media (max-width: 768px) {
+
+    .about-columns,
+    .events-columns,
+    .menu-items,
+    .contact-details {
+        flex-direction: column; /* Stack the columns on top of each other */
+    }
+    .footer-logo .logo,.brand {
+        font-family: var(--font-family-heading);
+        font-size: 0.5rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    .about-text, .about-images,
+    .menu-item, .event,
+    .contact-column {
+        width: 100%; /* Full width for mobile */
+        max-width: none; /* Remove width constraints */
+    }
+    .hero-content h1{
+        font-family: 'Oleo Script Swash Caps', cursive;
+        font-size: 3em;
+        margin: 0;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .about-text h2 {
+        font-size: 2em; /* Reduce font size on smaller screens */
+    }
+
+    .about-images, .event-image {
+        height: 200px; /* Restrict height for images */
+    }
+
+    .menu-item img {
+        height: 150px; /* Reduce image height */
+    }
+
+    .reservation-form-container {
+        width: 90%; /* Reduce form container width */
+    }
+
+    .contact-us-content h2 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    .user-profile-card {
+        padding: 15px; /* Reduce padding for mobile */
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-columns,
+    .events-columns,
+    .menu-items {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .about-text, .about-images {
+        max-width: 45%; /* Wider but still side-by-side */
+    }
+
+    .menu-item, .event, .contact-column {
+        width: 48%; /* Two per row on tablet */
+        margin-bottom: 20px;
+    }
+
+    .reservation-form-container {
+        width: 80%; /* Slightly wider form container */
+    }
+
+    .user-profile-card {
+        margin-bottom: 30px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .about-columns,
+    .events-columns {
+        flex-direction: row; /* Horizontal alignment */
+    }
+
+    .about-text, .about-images {
+        max-width: 40%;
+    }
+
+    .menu-item, .event, .contact-column {
+        width: 30%; /* Three per row */
+        margin: 10px;
+    }
+
+    .reservation-form-container {
+        width: 60%;
+    }
+
+    .user-profile-card {
+        padding: 25px; /* Increase padding for larger screens */
+    }
+}
+
+/* Desktop and Larger */
+@media (min-width: 1441px) {
+    .about-text h2 {
+        font-size: 8em; /* Larger heading on big screens */
+    }
+
+    .menu-item, .event, .contact-column {
+        width: 25%; /* Four per row */
+    }
+
+    .reservation-form-container {
+        width: 50%;
+    }
+}
+
+/* Additional Tweaks */
+/* Adjust padding, margins, and element sizes to scale better across screen sizes */
+.hero-content {
+    padding: 20px;
+}
+
+.menu-category {
+    padding: 8px 15px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 2em;
+    color: white;
+}
+
+.hamburger-menu i {
+    color: white;
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--footer-bg-color);
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    border-radius: 3px;
+    font-size: 1.2em;
+    padding-block: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--color-primary);
+}
+
+.sidebar-active {
+    left: 0;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-user {
+        display: none;
+    }
 }

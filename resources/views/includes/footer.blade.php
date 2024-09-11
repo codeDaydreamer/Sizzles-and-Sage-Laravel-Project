@@ -44,6 +44,6 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 Sizzles & Sage. All Rights Reserved. Designed and Developed by Kevin. Sam & Derrick</p>
+        <p>&copy; 2024 Sizzles & Sage. All Rights Reserved. Designed and Developed by Kev Karanja</p>
     </div>
 </footer>
